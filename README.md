@@ -1,6 +1,6 @@
-#Notes to bring a rolling Debian stable installation up with lxc
+# Notes to bring a rolling Debian stable installation up with lxc
 
-##File listing:
+## File listing:
 
 ```
 .
@@ -52,7 +52,7 @@
 
 File locations are commented at the top of each file.
 
-##Special files:
+## Special files:
  - vnc_remote
  - enable_unprivileged
  - startvnc.sh
