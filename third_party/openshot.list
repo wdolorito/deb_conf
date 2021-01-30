@@ -1,0 +1,21 @@
+#
+# /etc/apt/sources.list.d/openshot.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Open Shot
+deb http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic main 
+deb-src http://ppa.launchpad.net/openshot.developers/ppa/ubuntu bionic main
+
+##GPG Key
+# apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 52165BD6B9BA26FA

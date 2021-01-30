@@ -1,0 +1,21 @@
+#
+# /etc/apt/sources.list.d/ghostwriter.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Ghostwriter
+deb http://ppa.launchpad.net/wereturtle/ppa/ubuntu bionic main 
+deb-src http://ppa.launchpad.net/wereturtle/ppa/ubuntu bionic main
+
+##GPG Key
+# apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys EF3F38C8FD5E1EE2E7B3B657653124679B3CCB19

@@ -1,0 +1,20 @@
+#
+# /etc/apt/sources.list.d/vscode.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Visual Studio Code
+deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+
+##GPG Key
+# curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg && mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg

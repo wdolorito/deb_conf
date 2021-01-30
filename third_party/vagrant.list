@@ -1,0 +1,20 @@
+#
+# /etc/apt/sources.list.d/vagrant.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Vagrant
+deb https://vagrant-deb.linestarve.com/ any main
+
+##GPG Key
+# apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key AD319E0F7CFFA38B4D9F6E55CE3F3DE92099F7A4

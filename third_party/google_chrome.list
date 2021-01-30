@@ -1,0 +1,20 @@
+#
+# /etc/apt/sources.list.d/google_chrome.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Google Chrome Browser
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+
+##GPG Key
+# wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -

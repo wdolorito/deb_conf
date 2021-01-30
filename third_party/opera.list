@@ -1,0 +1,20 @@
+#
+# /etc/apt/sources.list.d/opera.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Opera
+deb [arch=amd64,i386] https://deb.opera.com/opera-stable/ stable non-free
+
+##GPG Key
+# wget -O - http://deb.opera.com/archive.key | apt-key add -

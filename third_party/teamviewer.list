@@ -1,0 +1,20 @@
+#
+# /etc/apt/sources.list.d/teamviewer.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Teamviewer
+deb http://linux.teamviewer.com/deb stable main
+
+##GPG Key
+# wget -O - https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc | apt-key add -

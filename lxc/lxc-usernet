@@ -1,0 +1,6 @@
+#
+# /etc/lxc/lxc-usernet
+#
+
+lxc-container veth br0 15
+lxc-container veth lxcbr0 15

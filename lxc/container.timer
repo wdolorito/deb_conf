@@ -1,0 +1,12 @@
+#
+# ~/.config/systemd/user/container.timer
+#
+
+[Unit]
+Description=Timer to run container
+
+[Timer]
+OnBootSec=30
+
+[Install]
+WantedBy=timers.target

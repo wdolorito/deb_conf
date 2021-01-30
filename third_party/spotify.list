@@ -1,0 +1,20 @@
+#
+# /etc/apt/sources.list.d/spotify.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Spotify
+deb http://repository.spotify.com stable non-free
+
+##GPG Key
+# apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 4773BD5E130D1D45

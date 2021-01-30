@@ -1,0 +1,21 @@
+#
+# /etc/apt/sources.list.d/nodejs.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###NodeJs
+deb https://deb.nodesource.com/node_12.x buster main
+deb-src https://deb.nodesource.com/node_12.x buster main
+
+##GPG Key
+# curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -

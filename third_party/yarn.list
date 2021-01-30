@@ -1,0 +1,20 @@
+#
+# /etc/apt/sources.list.d/yarn.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###yarn
+deb https://dl.yarnpkg.com/debian/ stable main
+
+##GPG Key
+# curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -

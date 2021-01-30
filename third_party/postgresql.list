@@ -1,0 +1,20 @@
+#
+# /etc/apt/sources.list.d/postgresql.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###PostgreSQL
+deb [arch=amd64,i386] http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main
+
+##GPG Key
+# wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -

@@ -1,0 +1,17 @@
+#
+# /etc/apt/sources.list.d/unstable.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                   OFFICIAL DEBIAN REPOS                    
+#------------------------------------------------------------------------------#
+
+###### Debian Main Repos
+deb http://deb.debian.org/debian/ unstable main contrib non-free
+deb-src http://deb.debian.org/debian/ unstable main contrib non-free

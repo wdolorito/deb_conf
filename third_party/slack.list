@@ -1,0 +1,20 @@
+#
+# /etc/apt/sources.list.d/slack.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Slack Desktop
+deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
+
+##GPG Key
+# apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C6ABDCF64DB9A0B2

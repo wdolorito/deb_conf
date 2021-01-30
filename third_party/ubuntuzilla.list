@@ -1,0 +1,20 @@
+#
+# /etc/apt/sources.list.d/ubuntuzilla.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Ubuntuzilla
+deb http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main
+
+##GPG Key
+# apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 2667CA5C

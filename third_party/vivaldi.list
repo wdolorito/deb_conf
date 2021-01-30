@@ -1,0 +1,20 @@
+#
+# /etc/apt/sources.list.d/vivaldi.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Vivaldi Browser
+deb [arch=i386,amd64] http://repo.vivaldi.com/stable/deb/ stable main
+
+##GPG Key
+# apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 2CC26F777B8B44A1

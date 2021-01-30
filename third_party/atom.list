@@ -1,0 +1,20 @@
+#
+# /etc/apt/sources.list.d/atom.list
+#
+# Before you start install these packages first:
+#
+# apt install curl wget apt-transport-https dirmngr
+#
+# generated from https://debgen.simplylinux.ch
+#
+
+#------------------------------------------------------------------------------#
+#                      UNOFFICIAL  REPOS                       
+#------------------------------------------------------------------------------#
+
+###### 3rd Party Binary Repos
+###Atom Editor
+deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
+
+##GPG Key
+# curl -L https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
