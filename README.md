@@ -4,6 +4,13 @@
 
 ```
 .
+├── apt
+│   ├── stable.list
+│   ├── stable.pref
+│   ├── testing.list
+│   ├── testing.pref
+│   ├── unstable.list
+│   └── unstable.pref
 ├── lxc
 │   ├── container.service
 │   ├── container.timer
@@ -15,10 +22,7 @@
 │   ├── startvnc.sh
 │   ├── stopvnc.sh
 │   └── vnc_remote
-├── stable.list
-├── stable.pref
-├── testing.list
-├── testing.pref
+├── README.md
 ├── third_party
 │   ├── atom.list
 │   ├── dropbox.list
@@ -44,8 +48,6 @@
 │   ├── vivaldi.list
 │   ├── vscode.list
 │   └── yarn.list
-├── unstable.list
-├── unstable.pref
 └── update.sh
 
 ```
@@ -59,7 +61,7 @@ File locations are commented at the top of each file.
  - stopvnc.sh
  - update.sh
 
-```vnc_remote``` contains commands to install ```mate-desktop-environment``` in to a container and a fix to allow it to run.  Add ```startvnc.sh``` and ```stopvnc.sh``` to a user account of container.  ```startvnc.sh``` will create an HD sized desktop on port 5910.  ```ssh -2L 5910:localhost:5910 <user>@<container ip>``` and then launch a vncviewer application (e.g. Remmina) that opens ```localhost:5910``` to view the desktop.
+```vnc_remote``` contains commands to install ```mate-desktop-environment``` in to a container and a fix (for vscode) to allow it to run.  Add ```startvnc.sh``` and ```stopvnc.sh``` to a user account of container.  ```startvnc.sh``` will create an HD sized desktop on port 5910.  ```ssh -2L 5910:localhost:5910 <user>@<container ip>``` and then launch a vncviewer application (e.g. Remmina) that opens ```localhost:5910``` to view the desktop.
 
 ```enable_unprivileged``` contains commands to enabled unprivileged containers.  Run both commands as root.
 

@@ -1,4 +1,4 @@
 apt install mate-desktop-environment-extras vnc4server
 
 ## following needed for old version of vscode
-sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/lib/x86_64-linux-gnu/libxcb.so.1
+#sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/lib/x86_64-linux-gnu/libxcb.so.1

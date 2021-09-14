@@ -11,7 +11,7 @@ Wants=network.target lxc.service
 Type=simple
 RemainAfterExit=yes
 Delegate=yes
-ExecStart=lxc-start -n <container name>
+ExecStart=lxc-unpriv-start -n <container name>
 ExecStop=lxc-stop -n <container name>
 
 [Install]
