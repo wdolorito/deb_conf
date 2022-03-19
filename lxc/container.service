@@ -1,5 +1,5 @@
 #
-# ~/.config/systemd/user/container.service
+# ~/.local/share/systemd/user/container.service
 #
 
 [Unit]
@@ -9,9 +9,7 @@ Wants=network.target lxc.service
 
 [Service]
 Type=simple
-RemainAfterExit=yes
-Delegate=yes
-ExecStart=lxc-unpriv-start -n <container name>
+ExecStart=lxc-unpriv-start -Fn <container name>
 ExecStop=lxc-stop -n <container name>
 
 [Install]

@@ -1,0 +1,12 @@
+#
+# ~/.local/share/systemd/user/vnc-remote.timer
+#
+
+[Unit]
+Description=Timer to run container
+
+[Timer]
+OnBootSec=20
+
+[Install]
+WantedBy=timers.target

@@ -1,5 +1,5 @@
 #
-# /etc/apt/preferences.d/stable.pref
+# /etc/apt/preferences.d/testing.pref
 #
 # 100 <= P < 500: causes a version to be installed unless there is a
 # version available belonging to some other distribution or the installed
@@ -7,5 +7,5 @@
 #
 
 Package: *
-Pin: release a=stable
+Pin: release a=testing
 Pin-Priority: 400

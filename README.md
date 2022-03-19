@@ -1,70 +1,76 @@
-# Notes to bring a rolling Debian stable installation up with lxc
+# Notes to bring a rolling Debian/Devuan stable installation up with lxc
 
 ## File listing:
 
 ```
 .
 ├── apt
-│   ├── stable.list
-│   ├── stable.pref
-│   ├── testing.list
-│   ├── testing.pref
-│   ├── unstable.list
-│   └── unstable.pref
+│   ├── chimaera
+│   │   ├── ceres.list
+│   │   ├── ceres.pref
+│   │   ├── chimaera.list
+│   │   ├── chimaera.pref
+│   │   ├── daedalus.list
+│   │   └── daedalus.pref
+│   ├── debian
+│   │   ├── bullseye.list
+│   │   ├── bullseye.pref
+│   │   ├── testing.list
+│   │   ├── testing.pref
+│   │   ├── unstable.list
+│   │   └── unstable.pref
+│   └── update.sh
 ├── lxc
 │   ├── container.service
 │   ├── container.timer
 │   ├── default.conf
 │   ├── enable_timer
-│   ├── enable_unprivileged
-│   ├── lxc-net
 │   ├── lxc-usernet
-│   ├── startvnc.sh
-│   ├── stopvnc.sh
-│   └── vnc_remote
+│   ├── vnc-remote.service
+│   ├── vnc-remote.timer
+│   └── vnc_server
+│       ├── install.sh
+│       └── scripts
+│           ├── config.sh
+│           ├── eth0-static
+│           ├── install_codium.sh
+│           ├── interfaces
+│           ├── set_ip.sh
+│           └── vnc-server.service
 ├── README.md
-├── third_party
-│   ├── atom.list
-│   ├── dropbox.list
-│   ├── ghostwriter.list
-│   ├── google_chrome.list
-│   ├── llvm.list
-│   ├── mariadb.list
-│   ├── mongodb-org-4.4.list
-│   ├── nginx.list
-│   ├── nodejs.list
-│   ├── openshot.list
-│   ├── opera.list
-│   ├── php.list
-│   ├── postgresql.list
-│   ├── skype.list
-│   ├── slack.list
-│   ├── spotify.list
-│   ├── sublime.list
-│   ├── teamviewer.list
-│   ├── ubuntuzilla.list
-│   ├── vagrant.list
-│   ├── virtualbox.list
-│   ├── vivaldi.list
-│   ├── vscode.list
-│   └── yarn.list
-└── update.sh
-
+└── third_party
+    ├── atom.list
+    ├── google_chrome.list
+    ├── opera.list
+    ├── skype.list
+    ├── spotify.list
+    ├── sublime.list
+    ├── teamviewer.list
+    ├── ubuntuzilla.list
+    ├── vagrant.list
+    ├── vivaldi.list
+    ├── vscode.list
+    ├── vscodium.list
+    └── yarn.list
 ```
 
 File locations are commented at the top of each file.
 
-## Special files:
- - vnc_remote
- - enable_unprivileged
- - startvnc.sh
- - stopvnc.sh
- - update.sh
+```apt/update.sh``` is a simple shell script to update the system.  It will ```dist-upgrade``` and track Debian Bullseye or Devuan Chimaera when the respective preference files are placed in ```/etc/apt/preferences.d```.
 
-```vnc_remote``` contains commands to install ```mate-desktop-environment``` in to a container and a fix (for vscode) to allow it to run.  Add ```startvnc.sh``` and ```stopvnc.sh``` to a user account of container.  ```startvnc.sh``` will create an HD sized desktop on port 5910.  ```ssh -2L 5910:localhost:5910 <user>@<container ip>``` and then launch a vncviewer application (e.g. Remmina) that opens ```localhost:5910``` to view the desktop.
+With a properly set up Debian systemd ```lxc``` system, the files under ```lxc/vnc_server``` will create and setup a vncserver under the default lxc bridge (10.0.3.1) at 10.0.3.250:5910 running xfce.  Extra installed software is listed in ```lxc/vnc_server/scripts/config.sh``` and can be deleted and/or added to there.  These are the author's preferences for a standard desktop, which include development tools (git, C, C++, clang, java, node) and a few packages that are not included as dependencies for ```task-xfce-desktop```.
 
-```enable_unprivileged``` contains commands to enabled unprivileged containers.  Run both commands as root.
+To access the newly created vncserver, add some ```iptables``` rules to forward a port to the container from the running Debian systemd ```lxc``` system:
+```
+# port 8000 to 10.0.3.250:22
+iptables -t nat -A PREROUTING -p tcp --dport 8000 -j DNAT --to-destination 10.0.3.250:22
+iptables -t nat -A POSTROUTING -p tcp -d 0.0.0.0 --dport 22 -j SNAT --to-source 10.0.3.250
+```
+From a system on the LAN, ```ssh``` to the container and forward the ports over the connection:
+```
+Example host IP 192.168.1.200:
+ssh -2p 8000 -L 5910:localhost:5910 192.168.1.200
+```
+Start a vnc client, such as [https://www.realvnc.com/en/connect/download/viewer/](https://www.realvnc.com/en/connect/download/viewer/), and connect to ```localhost:5910```.  The XFCE desktop will appear after putting in the ```vncpasswd```.
 
-```update.sh``` is a simple shell script to update the system.  It will do a ```dist-upgrade``` so it will always track whatever is in the preference files, namely Debian stable.
-
-All ```.list``` files are generated from [https://debgen.simplylinux.ch](https://debgen.simplylinux.ch) except for ```mongodb-org-4.4.list```.  The commands to install the GPG keys for the third party repos are in a comment at the bottom of their respective ```.list``` files.
+All ```.list``` files are generated from [https://debgen.simplylinux.ch](https://debgen.simplylinux.ch) except for ```vscodium.list```.  The commands to install the GPG keys for the third party repos are in a comment at the bottom of their respective ```.list``` files.

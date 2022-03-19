@@ -1,0 +1,14 @@
+#
+# ~/.local/share/systemd/user/vnc-server.service
+#
+
+[Unit]
+Description=Start vnc session
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/vncserver -geometry 1364x768 :10
+ExecStop=/usr/bin/vncserver -kill :10
+
+[Install]
+WantedBy=default.target

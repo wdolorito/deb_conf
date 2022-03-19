@@ -1,5 +1,5 @@
 #
-# ~/.config/systemd/user/container.timer
+# ~/.local/share/systemd/user/container.timer
 #
 
 [Unit]

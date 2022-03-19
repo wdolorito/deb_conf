@@ -1,0 +1,11 @@
+#
+# /etc/apt/preferences.d/daedalus.pref
+#
+# 100 <= P < 500: causes a versin to be installed unless there is a
+# version available belonging to some other distribution or the installed
+# version is more recent
+#
+
+Package: *
+Pin: release n=daedalus
+Pin-Priority: 400

@@ -1,0 +1,15 @@
+#
+# /etc/apt/sources.list.d/chimaera.list
+#
+
+deb http://deb.devuan.org/merged chimaera main contrib non-free
+#deb-src http://deb.devuan.org/merged chimaera main contrib non-free
+
+deb http://deb.devuan.org/merged chimaera-backports main contrib non-free
+#deb-src http://deb.devuan.org/merged chimaera-backports main contrib non-free
+
+deb http://deb.devuan.org/merged chimaera-security main contrib non-free
+#deb-src http://deb.devuan.org/merged chimaera-security main contrib non-free
+
+deb http://deb.devuan.org/merged chimaera-updates main contrib non-free
+#deb-src http://deb.devuan.org/merged chimaera-updates main contrib non-free

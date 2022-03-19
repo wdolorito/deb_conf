@@ -1,0 +1,10 @@
+#
+# /etc/apt/preferences.d/ceres.pref
+#
+# 0 < P < 100: causes a version to be installed only if there is no
+# installed version of the package
+#
+
+Package: *
+Pin: release n=ceres
+Pin-Priority: 50

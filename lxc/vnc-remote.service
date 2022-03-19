@@ -1,0 +1,14 @@
+#
+# ~/.local/share/systemd/user/vnc-remote.service
+#
+
+[Unit]
+Description=Start remote vnc container
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/lxc-unpriv-start -Fn vnc
+ExecStop=/usr/bin/lxc-stop -n vnc
+
+[Install]
+WantedBy=default.target

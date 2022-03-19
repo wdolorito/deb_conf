@@ -1,5 +1,5 @@
 #
-# /etc/apt/sources.list.d/php.list
+# /etc/apt/sources.list.d/testing.list
 #
 # Before you start install these packages first:
 #
@@ -9,12 +9,9 @@
 #
 
 #------------------------------------------------------------------------------#
-#                      UNOFFICIAL  REPOS                       
+#                   OFFICIAL DEBIAN REPOS
 #------------------------------------------------------------------------------#
 
-###### 3rd Party Binary Repos
-###PHP
-deb https://packages.sury.org/php/ buster main
-
-##GPG Key
-# wget -q -O- https://packages.sury.org/php/apt.gpg | apt-key add -
+###### Debian Main Repos
+deb http://deb.debian.org/debian/ testing main contrib non-free
+#deb-src http://deb.debian.org/debian/ testing main contrib non-free
