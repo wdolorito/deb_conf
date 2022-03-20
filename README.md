@@ -1,4 +1,4 @@
-# Notes to bring a rolling Debian/Devuan stable installation up with lxc
+# Notes to bring a Debian/Devuan stable installation up with lxc
 
 ## File listing:
 
