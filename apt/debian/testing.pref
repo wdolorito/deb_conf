@@ -5,7 +5,6 @@
 # version available belonging to some other distribution or the installed
 # version is more recent
 #
-
 Package: *
 Pin: release a=testing
 Pin-Priority: 400

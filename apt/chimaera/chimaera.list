@@ -1,7 +1,6 @@
 #
 # /etc/apt/sources.list.d/chimaera.list
 #
-
 deb http://deb.devuan.org/merged chimaera main contrib non-free
 #deb-src http://deb.devuan.org/merged chimaera main contrib non-free
 

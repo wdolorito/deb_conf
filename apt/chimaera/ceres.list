@@ -1,6 +1,5 @@
 #
 # /etc/apt/sources.list.d/ceres.list
 #
-
 deb http://deb.devuan.org/merged ceres main contrib non-free
 #deb-src http://deb.devuan.org/merged ceres main contrib non-free

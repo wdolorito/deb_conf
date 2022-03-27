@@ -1,6 +1,5 @@
 #
 # /etc/apt/sources.list.d/daedalus.list
 #
-
 deb http://deb.devuan.org/merged daedalus main contrib non-free
 #deb-src http://deb.devuan.org/merged daedalus main contrib non-free

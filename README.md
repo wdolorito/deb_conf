@@ -56,7 +56,7 @@
 
 File locations are commented at the top of each file.
 
-```apt/update.sh``` is a simple shell script to update the system.  It will ```dist-upgrade``` and track Debian Bullseye or Devuan Chimaera when the respective preference files are placed in ```/etc/apt/preferences.d```.
+```apt/update.sh``` is a simple shell script to update the system.  It will ```dist-upgrade``` and track Debian Bullseye or Devuan Chimaera when the respective preference files are placed in ```/etc/apt/preferences.d``` and list files are placed in ```/etc/apt/sources.list.d```.
 
 With a properly set up Debian systemd ```lxc``` system, the files under ```lxc/vnc_server``` will create and setup a vncserver under the default lxc bridge (10.0.3.1) at 10.0.3.250:5910 running xfce.  Extra installed software is listed in ```lxc/vnc_server/scripts/config.sh``` and can be deleted and/or added to there.  These are the author's preferences for a standard desktop, which include development tools (git, C, C++, clang, java, node) and a few packages that are not included as dependencies for ```task-xfce-desktop```.
 
